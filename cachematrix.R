@@ -1,22 +1,18 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
-## This function returns special matrix, which overrides existing matrix behavior
+## This function returns list of funtions, which "overrides" existing matrix behavior
 ## The new matrix has setter/getters for matrix and for inverse of the matrix - via set/get
 ## solve methods
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix(numeric())) {
         m <- NULL
+        ## sets new matrix and nullifies its inverse
         set <- function(y) {
                 x <<- y
                 m <<- NULL
         }
+        ## gets
         get <- function() x
         setsolve <- function(solve) m <<- solve
         getsolve <- function() m
-        matrix(set = set, get = get,
-               setsolve = setsolve,
-               getsolve = getsolve)
+        list(set = set, get = get, setsolve = setsolve, getsolve = getsolve)
 
 }
 
