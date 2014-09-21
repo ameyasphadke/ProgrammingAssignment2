@@ -12,8 +12,8 @@ makeCacheMatrix <- function(x = matrix(numeric())) {
         ## returns the original matrix i.e. matrix x
         get <- function() x
         
-        ## "Wraper" method for solve. Returns inverse if available in cache or calls 
-        ## solve method to compute inverse
+        ## "Wraper" method for solve. Sets inverse if available in cache or sets 
+        ## the result of solve function in cache
         setsolve <- function(solve) m <<- solve
         
         ##  Returns inverse of the matrix i.e. matrix m
